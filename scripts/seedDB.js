@@ -4,8 +4,7 @@ const db = require("../models");
 // This file empties the players collection and inserts the players below
 
 mongoose.connect(
-  process.env.MONGODB_URI ||
-  "mongodb://localhost/playerlist"
+  process.env.MONGODB_URI || "mongodb://localhost/playerlist"
 );
 
 const playerSeed = [
