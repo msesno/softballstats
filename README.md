@@ -1,27 +1,27 @@
-# softballstats
+# Softballstats
 REACT js app to store softball players, and game stats using routes & controllers
 
-# instructions
+# Instructions
 Add/Store softball players, and game logs to mongoDB and display them using bootstrap 
-- Deployed to heroku: https://secret-escarpment-51382.herokuapp.com/
+- Deployed to heroku: https://fierce-ravine-50744.herokuapp.com/
 
-# getting started
+# Getting started
 - clone repo
 - install node modules
 - start react app
 - use local port specified
 
-### open console: 
+# Open console: 
 - ```git clone https://github.com/msesno/softballstats.git``` <br>
 - ```cd softballstats``` <br>
 - ```npm i``` <br>
 - ```npm start```
 
-# front-end
+# Front-end
 - HTML, CSS (Bootstrap4)
 - Javascript (JQuery)
 
-# back-end
+# Back-end
 - JavaScript (JQuery)
 - React Components
 - NPM/Node
@@ -30,7 +30,7 @@ Add/Store softball players, and game logs to mongoDB and display them using boot
 
 # Links
 - Repository: https://github.com/msesno/softballstats/
-- Deployed site: https://secret-escarpment-51382.herokuapp.com/
+- Deployed site: https://fierce-ravine-50744.herokuapp.com/
 
 # Screenshot
 <img src="/img/ss.png" style="width='50%'"> <br>
