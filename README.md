@@ -33,4 +33,4 @@ Add/Store softball players, and game logs to mongoDB and display them using boot
 - Deployed site: https://secret-escarpment-51382.herokuapp.com/
 
 # Screenshot
-<img src="/img/ss.png"> <br>
+<img src="/img/ss.png" style="width='50%'"> <br>
