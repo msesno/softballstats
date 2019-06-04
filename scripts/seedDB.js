@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
+
 // This file empties the players collection and inserts the players below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/playerlist"
+  process.env.MONGODB_URI || "mongodb://<dbuser>:<dbpassword>@ds131747.mlab.com:31747/heroku_bcq3r0nr"
 );
 
 const playerSeed = [
