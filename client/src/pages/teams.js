@@ -7,29 +7,29 @@ import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 
-class players extends Component {
+class teams extends Component {
   state = {
-    players: [],
+    teams: [],
     name: "",
-    position: "",
+    league: "",
     about: ""
   };
 
   componentDidMount() {
-    this.loadplayers();
+    this.loadteams();
   }
 
-  loadplayers = () => {
-    API.getplayers()
+  loadteams = () => {
+    API.getteams()
       .then(res =>
-        this.setState({ players: res.data, name: "", position: "", about: "" })
+        this.setState({ teams: res.data, name: "", league: "", players: "", about: "" })
       )
       .catch(err => console.log(err));
   };
 
-  deleteplayer = id => {
-    API.deleteplayer(id)
-      .then(res => this.loadplayers())
+  deleteteam = id => {
+    API.deleteteam(id)
+      .then(res => this.loadteams())
       .catch(err => console.log(err));
   };
 
@@ -42,13 +42,14 @@ class players extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.name && this.state.position) {
-      API.saveplayer({
+    if (this.state.name && this.state.league && this.state.players) {
+      API.saveteam({
         name: this.state.name,
-        position: this.state.position,
+        league: this.state.league,
+        plyaers: this.state.players,
         about: this.state.about
       })
-        .then(res => this.loadplayers())
+        .then(res => this.loadteams())
         .catch(err => console.log(err));
     }
   };
@@ -59,7 +60,7 @@ class players extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Add Player</h1>
+              <h1>Add Team</h1>
             </Jumbotron>
             <form>
               <Input
@@ -69,10 +70,16 @@ class players extends Component {
                 placeholder="name (required)"
               />
               <Input
-                value={this.state.position}
+                value={this.state.league}
                 onChange={this.handleInputChange}
-                name="position"
-                placeholder="position (required)"
+                name="league"
+                placeholder="league (required)"
+              />
+              <Input
+                value={this.state.players}
+                onChange={this.handleInputChange}
+                name="players"
+                placeholder="players (required)"
               />
               <TextArea
                 value={this.state.about}
@@ -81,27 +88,27 @@ class players extends Component {
                 placeholder="about (optional)"
               />
               <FormBtn
-                disabled={!(this.state.position && this.state.name)}
+                disabled={!(this.state.league && this.state.name && this.state.name)}
                 onClick={this.handleFormSubmit}
               >
-                Submit player
+                Submit team
               </FormBtn>
             </form>
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Player List</h1>
+              <h1>Team List</h1>
             </Jumbotron>
-            {this.state.players.length ? (
+            {this.state.teams.length ? (
               <List>
-                {this.state.players.map(player => (
-                  <ListItem key={player._id}>
-                    <Link to={"/players/" + player._id}>
+                {this.state.teams.map(team => (
+                  <ListItem key={team._id}>
+                    <Link to={"/teams/" + team._id}>
                       <strong>
-                        {player.name}: {player.position}
+                        {team.name}: {team.league}
                       </strong>
                     </Link>
-                    <DeleteBtn onClick={() => this.deleteplayer(player._id)} />
+                    <DeleteBtn onClick={() => this.deleteteam(team._id)} />
                   </ListItem>
                 ))}
               </List>
@@ -115,4 +122,4 @@ class players extends Component {
   }
 }
 
-export default players;
+export default teams;

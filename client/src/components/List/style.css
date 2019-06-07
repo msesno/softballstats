@@ -20,9 +20,11 @@
   cursor: pointer;
 }
 
-.list-overflow-container li a {
-  color: #2A878C;
+.list-container li {
+  color: rgb(132, 42, 140);
 }
+
+
 
 .list-overflow-container li:first-child {
   border-top: none;
