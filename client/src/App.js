@@ -9,6 +9,7 @@ import playerDetail from "./pages/playerDetail";
 import gameDetail from "./pages/gameDetail";
 import teamDetail from "./pages/teamDetail";
 
+
 function App() {
   return (
     <Router>

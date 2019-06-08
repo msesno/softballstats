@@ -12,20 +12,31 @@ class teams extends Component {
     teams: [],
     name: "",
     league: "",
+    players: [],
     about: ""
   };
 
   componentDidMount() {
     this.loadteams();
+    this.loadplayers();
   }
 
   loadteams = () => {
     API.getteams()
       .then(res =>
-        this.setState({ teams: res.data, name: "", league: "", players: "", about: "" })
+        this.setState({ teams: res.data, name: "", league: "", players: [], about: "" })
       )
       .catch(err => console.log(err));
   };
+
+  loadplayers = () => {
+    API.getplayers()
+      .then(res =>
+        this.setState({ players: res.data, name: "", })
+      )
+      .catch(err => console.log(err));
+  };
+
 
   deleteteam = id => {
     API.deleteteam(id)
@@ -75,12 +86,25 @@ class teams extends Component {
                 name="league"
                 placeholder="league (required)"
               />
-              <Input
+              {/* <Input
                 value={this.state.players}
                 onChange={this.handleInputChange}
                 name="players"
                 placeholder="players (required)"
-              />
+              /> */}
+              <div className="btn-block">
+                Players: <br></br>
+              <select>
+                {this.state.players.map((players) => <option> {players.name} </option>)}
+              </select>
+              <select>
+                {this.state.players.map((players) => <option> {players.name} </option>)}
+              </select>
+              <select>
+                {this.state.players.map((players) => <option> {players.name} </option>)}
+              </select>
+              <br></br>
+              </div><br></br>
               <TextArea
                 value={this.state.about}
                 onChange={this.handleInputChange}
