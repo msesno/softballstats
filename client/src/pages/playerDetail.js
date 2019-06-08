@@ -22,16 +22,19 @@ class Detail extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-              <h1>
-                {this.state.player.name} - {this.state.player.position}
-              </h1>
+              <h2>
+                {this.state.player.name}
+              </h2>
+              <h5><code>Position: {this.state.player.position}</code></h5>
             </Jumbotron>
           </Col>
         </Row>
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-              <h1>About</h1>
+              <h2>About</h2>
+              <h5>{this.state.player.name} ({this.state.player.position})</h5><hr></hr>
+              <small><p>Position: {this.state.player.position} </p></small>
               <p>
                 {this.state.player.about}
               </p>

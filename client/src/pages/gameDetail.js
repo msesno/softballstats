@@ -25,15 +25,16 @@ class Detail extends Component {
               <h2>
                 {this.state.game.teams}
               </h2>
-              <strong><h5>Score: {this.state.game.score} </h5></strong>
+              <strong><h5><code>Score: {this.state.game.score} </code></h5></strong>
             </Jumbotron>
           </Col>
         </Row>
         <Row>
           <Col size="md-10 md-offset-1">
             <article>
-            <h3>Game Notes</h3><hr></hr>
-            <strong><p>Date: {this.state.game.when} </p></strong>
+            <h3>Game Notes</h3>
+            <h5>{this.state.game.teams} ({this.state.game.score})</h5><hr></hr>
+            <small><p>Date: {this.state.game.when} </p></small>
               <p>
                 {this.state.game.notes}
               </p>
