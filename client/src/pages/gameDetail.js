@@ -42,7 +42,7 @@ class Detail extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to games</Link>
+            <Link to="/games">← Back to Games</Link>
           </Col>
         </Row>
       </Container>

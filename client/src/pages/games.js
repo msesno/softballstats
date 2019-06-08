@@ -92,7 +92,7 @@ class games extends Component {
                 disabled={!(this.state.score && this.state.teams && this.state.when)}
                 onClick={this.handleFormSubmit}
               >
-                Submit game
+                Submit Game
               </FormBtn>
             </form>
           </Col>

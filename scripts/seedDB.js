@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const db = require("../models");
 
 
-// This file empties the players collection and inserts the players below
+// This file empties the collections and inserts below entries
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/softballList"
@@ -144,6 +144,3 @@ db.game
     console.error(err);
     process.exit(1);
   });
-
-
-

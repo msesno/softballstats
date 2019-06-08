@@ -41,7 +41,7 @@ class Detail extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to teams</Link>
+            <Link to="/teams">← Back to Teams</Link>
           </Col>
         </Row>
       </Container>
