@@ -14,7 +14,7 @@ class games extends Component {
     games: [],
     teams: [],
     score: "",
-    when: "",
+    when: new Date(),
     notes: ""
   };
 
@@ -26,7 +26,7 @@ class games extends Component {
   loadgames = () => {
     API.getgames()
       .then(res =>
-        this.setState({ games: res.data, teams: [], score: "", when: "", notes: "" })
+        this.setState({ games: res.data, teams: [], score: "", when: new Date(), notes: "" })
       )
       .catch(err => console.log(err));
   };
@@ -94,29 +94,19 @@ class games extends Component {
                 value={this.state.score}
                 onChange={this.handleInputChange}
                 teams="score"
-                placeholder="score (required)"
+                placeholder="score* (12-7)"
               />
               <Input
                 value={this.state.when}
                 onChange={this.handleInputChange}
                 teams="when"
-                placeholder="when (required)"
+                placeholder="when*"
               />
-              {/* <div className="btn-block">
-                <p>Teams:</p> <hr></hr>
-                <select>
-                {this.state.teams.map((teams) => <option> {teams.name} </option>)}
-                </select>
-                <select>
-                {this.state.teams.map((teams) => <option> {teams.name} </option>)}
-                </select>
-                <br></br>
-              </div> */}
               <TextArea
                 value={this.state.notes}
                 onChange={this.handleInputChange}
                 teams="notes"
-                placeholder="notes (optional)"
+                placeholder="game notes"
               />
               <FormBtn
                 disabled={!(this.state.score && this.state.when)}
