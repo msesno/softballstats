@@ -12,7 +12,7 @@ import { Input, TextArea, FormBtn } from "../components/Form";
 class games extends Component {
   state = {
     games: [],
-    teams: "",
+    teams: [],
     score: "",
     when: "",
     notes: ""
@@ -20,12 +20,21 @@ class games extends Component {
 
   componentDidMount() {
     this.loadgames();
+    this.loadteams();
   }
 
   loadgames = () => {
     API.getgames()
       .then(res =>
-        this.setState({ games: res.data, teams: "", score: "", when: "", notes: "" })
+        this.setState({ games: res.data, teams: [], score: "", when: "", notes: "" })
+      )
+      .catch(err => console.log(err));
+  };
+
+  loadteams = () => {
+    API.getteams()
+      .then(res =>
+        this.setState({ teams: res.data, name: "" })
       )
       .catch(err => console.log(err));
   };
@@ -66,12 +75,21 @@ class games extends Component {
               <h1>Add Game</h1>
             </Jumbotron>
             <form>
-              <Input
+              {/* <Input
                 value={this.state.teams}
                 onChange={this.handleInputChange}
                 teams="teams"
                 placeholder="teams (required)"
-              />
+              /> */}
+
+               <div className="btn-block">
+                <h5>+ Add Game Form:</h5><hr></hr>
+                <p>Teams: <select>
+                {this.state.teams.map((teams) => <option> {teams.name} </option>)}
+                </select> <small>vs. </small><select>
+                {this.state.teams.map((teams) => <option> {teams.name} </option>)}
+                </select></p>
+              </div>
               <Input
                 value={this.state.score}
                 onChange={this.handleInputChange}
@@ -84,6 +102,16 @@ class games extends Component {
                 teams="when"
                 placeholder="when (required)"
               />
+              {/* <div className="btn-block">
+                <p>Teams:</p> <hr></hr>
+                <select>
+                {this.state.teams.map((teams) => <option> {teams.name} </option>)}
+                </select>
+                <select>
+                {this.state.teams.map((teams) => <option> {teams.name} </option>)}
+                </select>
+                <br></br>
+              </div> */}
               <TextArea
                 value={this.state.notes}
                 onChange={this.handleInputChange}
@@ -91,7 +119,7 @@ class games extends Component {
                 placeholder="notes (optional)"
               />
               <FormBtn
-                disabled={!(this.state.score && this.state.teams && this.state.when)}
+                disabled={!(this.state.score && this.state.when)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Game

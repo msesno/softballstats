@@ -6,6 +6,13 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+// import Select from 'react-select';
+
+// import { colourOptions } from '../data';
+
+// const options = [
+//   { value:  this.state.players, label: this.state.players.name }
+// ];
 
 class teams extends Component {
   state = {
@@ -57,7 +64,7 @@ class teams extends Component {
       API.saveteam({
         name: this.state.name,
         league: this.state.league,
-        plyaers: this.state.players,
+        players: this.state.players,
         about: this.state.about
       })
         .then(res => this.loadteams())
@@ -74,17 +81,18 @@ class teams extends Component {
               <h1>Add Team</h1>
             </Jumbotron>
             <form>
+            <h5>+ Add Team Form:</h5><hr></hr>
               <Input
                 value={this.state.name}
                 onChange={this.handleInputChange}
                 name="name"
-                placeholder="name (required)"
+                placeholder="team name*"
               />
               <Input
                 value={this.state.league}
                 onChange={this.handleInputChange}
                 name="league"
-                placeholder="league (required)"
+                placeholder="league name*"
               />
               {/* <Input
                 value={this.state.players}
@@ -93,8 +101,8 @@ class teams extends Component {
                 placeholder="players (required)"
               /> */}
               <div className="btn-block">
-                Players: <br></br>
-              <select>
+                <p>Roster:</p>
+              <p><select className="basic-multi-select" classNamePrefix="select">
                 {this.state.players.map((players) => <option> {players.name} </option>)}
               </select>
               <select>
@@ -102,9 +110,8 @@ class teams extends Component {
               </select>
               <select>
                 {this.state.players.map((players) => <option> {players.name} </option>)}
-              </select>
-              <br></br>
-              </div><br></br>
+              </select></p>
+              </div>
               <TextArea
                 value={this.state.about}
                 onChange={this.handleInputChange}
