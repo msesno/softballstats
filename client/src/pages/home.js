@@ -12,11 +12,11 @@ const Example = (props) => {
       <Col size="sm-10">
       <Jumbotron className="text-center">
         <h1 className="text-center"><small><i class="fas fa-baseball-ball fa-spin"></i></small> <strong>softball stats</strong></h1>
-        <p className="lead text-center">react app for tracking softball <br></br>players, teams and games</p>
+        <p className="lead text-center">react app for tracking softball <br></br>players, teams, and games</p>
         <hr className="my-2 text-center" />
         <p>choose a section below to begin</p>
       <div className="btn-group">
-        <Link to="/players" className="btn btn-outline-primary">players</Link> 
+        <Link to="/players" className="btn btn-outline-primary align-top">players</Link> 
         <Link to="/teams" className="btn btn-outline-primary">teams</Link> 
         <Link to="/games" className="btn btn-outline-primary">games</Link> 
       </div>
