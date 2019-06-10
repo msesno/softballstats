@@ -11,6 +11,9 @@ class players extends Component {
   state = {
     players: [],
     name: "",
+    atbats: "",
+    hits: "",
+    outs: "",
     position: "",
     about: ""
   };
@@ -22,7 +25,7 @@ class players extends Component {
   loadplayers = () => {
     API.getplayers()
       .then(res =>
-        this.setState({ players: res.data, name: "", position: "", about: "" })
+        this.setState({ players: res.data, name: "", atbats: "", hits: "", outs: "", position: "", about: "" })
       )
       .catch(err => console.log(err));
   };
@@ -66,19 +69,37 @@ class players extends Component {
                 value={this.state.name}
                 onChange={this.handleInputChange}
                 name="name"
-                placeholder="name (required)"
+                placeholder="name*"
               />
               <Input
                 value={this.state.position}
                 onChange={this.handleInputChange}
                 name="position"
-                placeholder="position (required)"
+                placeholder="position*"
+              />
+              <Input
+                value={this.state.atbats}
+                onChange={this.handleInputChange}
+                name="atbats"
+                placeholder="at-bats (can change later)"
+              />
+              <Input
+                value={this.state.hits}
+                onChange={this.handleInputChange}
+                name="hits"
+                placeholder="hits (can change later)"
+              />
+              <Input
+                value={this.state.out}
+                onChange={this.handleInputChange}
+                name="outs"
+                placeholder="outs (can change later)"
               />
               <TextArea
                 value={this.state.about}
                 onChange={this.handleInputChange}
                 name="about"
-                placeholder="about (optional)"
+                placeholder="about player"
               />
               <FormBtn
                 disabled={!(this.state.position && this.state.name)}

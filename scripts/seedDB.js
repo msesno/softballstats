@@ -41,7 +41,8 @@ const playerSeed = [
 
 const gameSeed = [
   {
-    teams: "Redbuds v Bombers",
+    team1: "Redbuds",
+    team2: "Bombers",
     score: "27-4",
     when: "4.24.2019",
     notes:
@@ -49,7 +50,8 @@ const gameSeed = [
     date: new Date(Date.now())
   },
   {
-    teams: "Team Awesome v Black Birds",
+    team1: "Team Awesome",
+    team2: "Black Birds",
     score: "39-6",
     when: "5.2.2019",
     notes:
@@ -57,7 +59,8 @@ const gameSeed = [
     date: new Date(Date.now())
   },
   {
-    teams: "Redbuds v Scumbags",
+    team1: "Redbuds",
+    team2: "Scumbags",
     score: "12-15",
     when: "3.28.2019",
     notes:
@@ -65,7 +68,8 @@ const gameSeed = [
     date: new Date(Date.now())
   },
   {
-    teams: "Team Awesome v Redbuds",
+    team1: "Team Awesome",
+    team2: "Redbuds",
     score: "47-2",
     when: "2.15.2019",
     notes:

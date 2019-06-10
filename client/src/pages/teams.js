@@ -19,30 +19,30 @@ class teams extends Component {
     teams: [],
     name: "",
     league: "",
-    players: [],
+    players: "",
     about: ""
   };
 
   componentDidMount() {
     this.loadteams();
-    this.loadplayers();
+    // this.loadplayers();
   }
 
   loadteams = () => {
     API.getteams()
       .then(res =>
-        this.setState({ teams: res.data, name: "", league: "", players: [], about: "" })
+        this.setState({ teams: res.data, name: "", league: "", players: "", about: "" })
       )
       .catch(err => console.log(err));
   };
 
-  loadplayers = () => {
-    API.getplayers()
-      .then(res =>
-        this.setState({ players: res.data, name: "", })
-      )
-      .catch(err => console.log(err));
-  };
+  // loadplayers = () => {
+  //   API.getplayers()
+  //     .then(res =>
+  //       this.setState({ players: res.data, name: "", })
+  //     )
+  //     .catch(err => console.log(err));
+  // };
 
 
   deleteteam = id => {
@@ -81,7 +81,6 @@ class teams extends Component {
               <h1>Add Team</h1>
             </Jumbotron>
             <form>
-            <h5>+ Add Team Form:</h5><hr></hr>
               <Input
                 value={this.state.name}
                 onChange={this.handleInputChange}
@@ -94,13 +93,13 @@ class teams extends Component {
                 name="league"
                 placeholder="league name*"
               />
-              {/* <Input
+              <Input
                 value={this.state.players}
                 onChange={this.handleInputChange}
                 name="players"
-                placeholder="players (required)"
-              /> */}
-              <div className="btn-block">
+                placeholder="players"
+              />
+              {/* <div className="btn-block">
                 <p>Roster:</p>
               <p><select className="basic-multi-select" classNamePrefix="select">
                 {this.state.players.map((players) => <option> {players.name} </option>)}
@@ -111,15 +110,15 @@ class teams extends Component {
               <select>
                 {this.state.players.map((players) => <option> {players.name} </option>)}
               </select></p>
-              </div>
+              </div> */}
               <TextArea
                 value={this.state.about}
                 onChange={this.handleInputChange}
                 name="about"
-                placeholder="about (optional)"
+                placeholder="about team"
               />
               <FormBtn
-                disabled={!(this.state.league && this.state.name && this.state.name)}
+                disabled={!(this.state.league && this.state.name && this.state.players)}
                 onClick={this.handleFormSubmit}
               >
                 Submit team

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
+import ImageUploader from 'react-image-uploader';
 
 class Detail extends Component {
   state = {
@@ -23,7 +24,7 @@ class Detail extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h2>
-                {this.state.game.teams}
+              {this.state.game.team1} v {this.state.game.team2}
               </h2>
               <strong><h5><code>Score: {this.state.game.score} </code></h5></strong>
             </Jumbotron>
@@ -33,7 +34,7 @@ class Detail extends Component {
           <Col size="md-10 md-offset-1">
             <article>
             <h3>Game Notes</h3>
-            <h5>{this.state.game.teams} ({this.state.game.score})</h5><hr></hr>
+            <h5>{this.state.game.team1} v {this.state.game.team2} ({this.state.game.score})</h5><hr></hr>
             <small><p>Date: {this.state.game.when} </p></small>
               <p>
                 {this.state.game.notes}
@@ -46,6 +47,11 @@ class Detail extends Component {
             <Link to="/games">← Back to Games</Link>
           </Col>
         </Row>
+
+        {/* <div>
+        <ImageUploader multi={false} baseURL={'http://localhost:8080'} />
+      </div> */}
+
       </Container>
     );
   }
