@@ -1,5 +1,5 @@
 import React from "react";
-import { Jumbotron, Button, ButtonGroup } from 'reactstrap';
+import { Jumbotron } from 'reactstrap';
 import { Col, Row, Container } from "../components/Grid";
 import { Link } from "react-router-dom";
 
