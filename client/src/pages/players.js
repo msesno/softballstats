@@ -124,7 +124,7 @@ class players extends Component {
                 disabled={!(this.state.position && this.state.name)}
                 onClick={this.handleFormSubmit}
               >
-                Submit player
+               <i class="fas fa-check-square"></i> Submit Player
               </FormBtn>
             </form>
           </Col>

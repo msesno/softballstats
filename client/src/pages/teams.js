@@ -114,7 +114,7 @@ class teams extends Component {
                 disabled={!(this.state.league && this.state.name && this.state.players)}
                 onClick={this.handleFormSubmit}
               >
-                Submit team
+                <i class="fas fa-check-square"></i> Submit Team
               </FormBtn>
             </form>
           </Col>

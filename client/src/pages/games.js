@@ -157,7 +157,7 @@ class games extends Component {
                 disabled={!(this.state.score && this.state.when)}
                 onClick={this.handleFormSubmit}
               >
-                Submit Game
+                <i class="fas fa-check-square"></i> Submit Game
               </FormBtn>
             </form>
           </Col>
