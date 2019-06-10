@@ -128,7 +128,7 @@ class teams extends Component {
                   <ListItem key={team._id}>
                     <Link to={"/teams/" + team._id}>
                       <strong>
-                        {team.name}: {team.league}
+                      <i class="fas fa-users"></i> {team.name}: {team.league}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteteam(team._id)} />

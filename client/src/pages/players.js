@@ -138,7 +138,7 @@ class players extends Component {
                   <ListItem key={player._id}>
                     <Link to={"/players/" + player._id}>
                       <strong>
-                        {player.name}: {player.position}
+                      <i class="fas fa-user"></i> {player.name}: {player.position}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteplayer(player._id)} />

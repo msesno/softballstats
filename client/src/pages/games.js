@@ -171,7 +171,7 @@ class games extends Component {
                   <ListItem key={game._id}>
                     <Link to={"/games/" + game._id}>
                       <strong>
-                        {game.team1} v {game.team2}, {game.score}
+                      <i class="fas fa-folder"></i> {game.team1} v {game.team2}, {game.score}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deletegame(game._id)} />
