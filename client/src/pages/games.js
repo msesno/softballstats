@@ -112,7 +112,7 @@ class games extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Add Game</h1>
+              <h1><i class="fas fa-folder-plus"></i> <strong>Add Game</strong></h1>
             </Jumbotron>
             <form>
               <Input
@@ -175,7 +175,7 @@ class games extends Component {
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Game List</h1>
+              <h1><i class="fas fa-folder-open"></i> <strong>Game List</strong></h1>
             </Jumbotron>
             {this.state.games.length ? (
               <List>

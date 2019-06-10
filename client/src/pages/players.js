@@ -69,7 +69,7 @@ class players extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Add Player</h1>
+              <h1><i class="fas fa-user-plus"></i> <strong>Add Player</strong></h1>
             </Jumbotron>
             <form>
               <Input
@@ -130,7 +130,7 @@ class players extends Component {
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Player List</h1>
+              <h1><i class="fas fa-user-friends"></i> <strong>Players</strong></h1>
             </Jumbotron>
             {this.state.players.length ? (
               <List>

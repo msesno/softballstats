@@ -24,7 +24,7 @@ class Detail extends Component {
           <Col size="md-10">
             <Jumbotron>
               <h2>
-                {this.state.team.name}
+                <strong>{this.state.team.name}</strong>
               </h2>
               <h5><code>League: {this.state.team.league}</code></h5>
             </Jumbotron>

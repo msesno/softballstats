@@ -78,7 +78,7 @@ class teams extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>Add Team</h1>
+              <h1><i class="fas fa-user-friends"></i> <strong>Add Team</strong></h1>
             </Jumbotron>
             <form>
               <Input
@@ -127,7 +127,7 @@ class teams extends Component {
           </Col>
           <Col size="md-6 sm-12">
             <Jumbotron>
-              <h1>Team List</h1>
+              <h1><i class="fas fa-users"></i> <strong>Team List</strong></h1>
             </Jumbotron>
             {this.state.teams.length ? (
               <List>

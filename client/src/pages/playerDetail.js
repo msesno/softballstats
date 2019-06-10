@@ -24,7 +24,7 @@ class Detail extends Component {
           <Col size="md-10">
             <Jumbotron>
               <h2>
-                {this.state.player.name}
+                <strong>{this.state.player.name} </strong>
               </h2>
               <h5><code>Position: {this.state.player.position}</code></h5>
             </Jumbotron>

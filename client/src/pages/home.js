@@ -11,8 +11,8 @@ const Example = (props) => {
       <Col size="sm-1"></Col>
       <Col size="sm-10">
       <Jumbotron className="text-center">
-        <h1 className="display-3 text-center">softball stats</h1>
-        <p className="lead text-center">this is a react app for tracking softball players, teams and games</p>
+        <h1 className="text-center"><small><i class="fas fa-baseball-ball fa-spin"></i></small> <strong>softball stats</strong></h1>
+        <p className="lead text-center">react app for tracking softball <br></br>players, teams and games</p>
         <hr className="my-2 text-center" />
         <p>choose a section below to begin</p>
         <p className="btn-grp">
