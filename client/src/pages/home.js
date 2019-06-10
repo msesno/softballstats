@@ -17,9 +17,9 @@ const Example = (props) => {
         <p>choose a section below to begin</p>
         <p className="btn-grp">
         <ButtonGroup>
-        <Button className="btn-md" outline color="primary" href="/players">players</Button>
-        <Button className="btn-md" outline color="primary" href="/teams">teams</Button>
-        <Button className="btn-md" outline color="primary" href="/games">games</Button>
+        <Button outline color="primary" href="/players">players</Button>
+        <Button outline color="primary" href="/teams">teams</Button>
+        <Button outline color="primary" href="/games">games</Button>
       </ButtonGroup>
         </p>
       </Jumbotron></Col>
