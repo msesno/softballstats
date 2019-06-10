@@ -1,12 +1,12 @@
 import React from "react";
 import { Jumbotron, Button, ButtonGroup } from 'reactstrap';
 import { Col, Row, Container } from "../components/Grid";
+import { Link } from "react-router-dom";
 
 const Example = (props) => {
   return (
-    <div>
-      <br></br>
       <Container>
+        <br></br>
       <Row>
       <Col size="sm-1"></Col>
       <Col size="sm-10">
@@ -20,9 +20,15 @@ const Example = (props) => {
         <Button outline color="primary" href="/teams">teams</Button>
         <Button outline color="primary" href="/games">games</Button>
       </ButtonGroup>
+      <br></br>
+      <div className="btn-group">
+        <Link to="/players" className="btn btn-outline-primary">players</Link> 
+        <Link to="/teams" className="btn btn-outline-primary">teams</Link> 
+        <Link to="/games" className="btn btn-outline-primary">games</Link> 
+      </div>
       </Jumbotron></Col>
       <Col size="sm-1"></Col>
-    </Row></Container></div>
+    </Row></Container>
   );
 };
 
