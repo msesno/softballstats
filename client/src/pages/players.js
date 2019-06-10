@@ -11,6 +11,8 @@ class players extends Component {
   state = {
     players: [],
     name: "",
+    age: "",
+    weight: "",
     atbats: "",
     hits: "",
     outs: "",
@@ -25,7 +27,7 @@ class players extends Component {
   loadplayers = () => {
     API.getplayers()
       .then(res =>
-        this.setState({ players: res.data, name: "", atbats: "", hits: "", outs: "", position: "", about: "" })
+        this.setState({ players: res.data, name: "", age: "", weight: "", atbats: "", hits: "", outs: "", position: "", about: "" })
       )
       .catch(err => console.log(err));
   };
@@ -49,6 +51,11 @@ class players extends Component {
       API.saveplayer({
         name: this.state.name,
         position: this.state.position,
+        age: this.state.age,
+        weight: this.state.weight,
+        atbats: this.state.atbats,
+        hits: this.state.hits,
+        outs: this.state.outs,
         about: this.state.about
       })
         .then(res => this.loadplayers())
@@ -78,22 +85,34 @@ class players extends Component {
                 placeholder="position*"
               />
               <Input
+                value={this.state.age}
+                onChange={this.handleInputChange}
+                name="age"
+                placeholder="age"
+              />
+              <Input
+                value={this.state.weight}
+                onChange={this.handleInputChange}
+                name="weight"
+                placeholder="weight"
+              />
+              <Input
                 value={this.state.atbats}
                 onChange={this.handleInputChange}
                 name="atbats"
-                placeholder="at-bats (can change later)"
+                placeholder="at-bats"
               />
               <Input
                 value={this.state.hits}
                 onChange={this.handleInputChange}
                 name="hits"
-                placeholder="hits (can change later)"
+                placeholder="hits"
               />
               <Input
-                value={this.state.out}
+                value={this.state.outs}
                 onChange={this.handleInputChange}
                 name="outs"
-                placeholder="outs (can change later)"
+                placeholder="outs"
               />
               <TextArea
                 value={this.state.about}

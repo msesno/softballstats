@@ -148,7 +148,7 @@ class games extends Component {
                 value={this.state.when}
                 onChange={this.handleInputChange}
                 name="when"
-                placeholder="date* dd/mm/yyy"
+                placeholder="date* (dd/mm/yyy)"
               />
               {/* <p>
               <DatePicker

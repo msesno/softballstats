@@ -20,7 +20,8 @@ class Detail extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
+          <Col size="md-1"></Col>
+          <Col size="md-10">
             <Jumbotron>
               <h2>
                 {this.state.player.name}
@@ -28,24 +29,29 @@ class Detail extends Component {
               <h5><code>Position: {this.state.player.position}</code></h5>
             </Jumbotron>
           </Col>
+          <Col size="md-1"></Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h2>About</h2>
-              <h5>{this.state.player.name} ({this.state.player.position})</h5><hr></hr>
-              <small><p>Position: {this.state.player.position} </p></small>
+          <Col size="md-1"></Col>
+          <Col size="md-10 offset-1">
+            <article className="card">
+              <h2 className="card-header">Player Card</h2>
+              <div className="card-body">
+              <h5 className="card-subtitle">{this.state.player.name} ({this.state.player.position})</h5><hr></hr>
+              <small><p>Age: {this.state.player.age} | Weight: {this.state.player.weight}lbs</p></small>
+              <small><p>Position: {this.state.player.position} </p></small> 
+              <small><p>AtBats: {this.state.player.atbats} | Hits: {this.state.player.hits} | Outs: {this.state.player.outs}</p></small>
               <p>
                 {this.state.player.about}
               </p>
-            </article>
+              <p><Link to="/players" className="btn btn-outline-primary">← Back to Players</Link></p>
+              </div>
+            </article><br></br>
+
           </Col>
+          <Col size="md-1"></Col>
         </Row>
-        <Row>
-          <Col size="md-2">
-            <Link to="/players">← Back to Players</Link>
-          </Col>
-        </Row>
+
       </Container>
     );
   }

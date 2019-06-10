@@ -20,7 +20,8 @@ class Detail extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-12">
+          <Col size="md-1"></Col>
+          <Col size="md-10">
             <Jumbotron>
               <h2>
                 {this.state.team.name}
@@ -28,24 +29,25 @@ class Detail extends Component {
               <h5><code>League: {this.state.team.league}</code></h5>
             </Jumbotron>
           </Col>
+          <Col size="md-1"></Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h2>About</h2>
-              <h5>{this.state.team.name} ({this.state.team.league})</h5><hr></hr>
+        <Col size="md-1"></Col>
+          <Col size="md-10">
+            <article className="card">
+              <h2 className="card-header">Team Card</h2>
+              <div className="card-body">
+              <h5 className="card-subtitle">{this.state.team.name} ({this.state.team.league})</h5><hr></hr>
               <small><p>Roster: {this.state.team.players}</p></small>
               <p>
                 {this.state.team.about}
               </p>
+              <Link to="/teams" className="btn btn-outline-primary">← Back to Teams</Link></div>
             </article>
           </Col>
+          <Col size="md-1"></Col>
         </Row>
-        <Row>
-          <Col size="md-2">
-            <Link to="/teams">← Back to Teams</Link>
-          </Col>
-        </Row>
+
       </Container>
     );
   }
