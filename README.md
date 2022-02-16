@@ -33,4 +33,4 @@ Add/Store softball players, and game logs to mongoDB and display them using boot
 - Deployed site: https://fierce-ravine-50744.herokuapp.com/
 
 # Screenshot
-<img src="/img/ss.png" style="width='50%'"> <br>
+<img src="https://matthewsesno.com/images/softballstats.png" style="width='300px' height='auto'"> <br>
